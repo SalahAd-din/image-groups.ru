@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .display_medium {
+        font-size: clamp(1.4rem, 3.5vw, 3rem);
+        @apply leading-tight font-bold tracking-[0.1px] text-foreground;
+    }
+    .title_medium {
+        @apply text-[18px] leading-[24px] font-bold tracking-[0.1px] text-foreground/70;
+    }
+    /* .body_large {
+        @apply text-[18px] leading-[24px] font-normal tracking-[0.1px] text-foreground/70;
+    } */
+    .body_medium {
+        @apply text-[16px] leading-[24px] font-normal tracking-[0.1px] text-foreground;
+    }
+    .body_small {
+        @apply text-[14px] leading-[22px] font-normal tracking-[0.2px] text-foreground/90;
+    }
+    .body_smallest {
+        @apply text-[13px] leading-[18px] font-normal tracking-[0.2px] text-foreground/70;
+    }
+}
