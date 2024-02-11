@@ -2,6 +2,9 @@ import React from "react";
 import { Content } from "@/src/components/Content";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
+import OrderModal from "@/src/components/modals/order-modal";
+import { OrderForm } from "@/src/components/forms/order-form";
+import OrderModalContent from "@/src/components/modal-content/order-modal";
 
 const contentItem = [
     {
@@ -55,12 +58,19 @@ const Services = () => {
                                     <p className="text-sm md:text-base">
                                         {e.desc}
                                     </p>
-                                    <Button
-                                        variant="outline"
-                                        className="max-sm:w-full"
+
+                                    <OrderModal
+                                        trigger={
+                                            <Button
+                                                variant="outline"
+                                                className="max-sm:w-full"
+                                            >
+                                                Оставить заявку
+                                            </Button>
+                                        }
                                     >
-                                        Оставить заявку
-                                    </Button>
+                                        <OrderModalContent />
+                                    </OrderModal>
                                 </div>
                             </div>
                         ))}

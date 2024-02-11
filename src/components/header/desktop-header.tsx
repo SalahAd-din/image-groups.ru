@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { navigation } from "@/src/const/navigation";
 import Link from "next/link";
+import OrderModal from "../modals/order-modal";
+import OrderModalContent from "../modal-content/order-modal";
 
 const DesktopHeader = () => {
     return (
@@ -33,9 +35,15 @@ const DesktopHeader = () => {
                             </div>
                         </div>
                         <div className="">
-                            <Button className="max-md:hidden relative z-10">
-                                Получить консультацию
-                            </Button>
+                            <OrderModal
+                                trigger={
+                                    <Button className="max-md:hidden relative z-10">
+                                        Получить консультацию
+                                    </Button>
+                                }
+                            >
+                                <OrderModalContent />
+                            </OrderModal>
                         </div>
                     </div>
                 </div>
