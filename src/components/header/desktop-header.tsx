@@ -48,9 +48,13 @@ const DesktopHeader = () => {
                     </div>
                 </div>
                 <div className="max-md:hidden flex justify-between py-5">
-                    <div className="flex gap-16">
+                    <div className="space-x-10">
                         {navigation.map((e, i) => (
-                            <Link key={i} href={e.link} className="body_medium">
+                            <Link
+                                key={i}
+                                href={e.link}
+                                className="body_medium hover:font-bold hover:underline"
+                            >
                                 {e.title}
                             </Link>
                         ))}

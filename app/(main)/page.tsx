@@ -10,6 +10,17 @@ import Map from "./_sections/Map";
 import CTA from "./_sections/CTA";
 import News from "./_sections/News";
 import Models from "./_sections/Models";
+import type { Metadata } from "next";
+import { Online } from "@/src/components/Online";
+
+export const metadata: Metadata = {
+    title: "Продажа и обслуживание спецтехники разного профиля | Волга Трак Центр",
+    description:
+        "Волга Трак Центр предлагает широкий ассортимент грузовиков, тягачей и самосвалов, а также профессиональное обслуживание и ремонт. Найдите идеальный грузовик для вашего бизнеса с нами.",
+    keywords:
+        "Волга Трак Центр, продажа тягачей, продажа самосвалов, обслуживание грузовиков, ремонт грузовиков, купить тягач, купить самосвал",
+};
+
 export default function Home() {
     return (
         <div>
@@ -20,11 +31,12 @@ export default function Home() {
             <Services />
             <Models />
             <Reviews />
-
-            <FAQ />
-            <News />
             <CTA />
+            <FAQ />
+            {/*  <News /> */}
+
             <Map />
+            <Online />
         </div>
     );
 }

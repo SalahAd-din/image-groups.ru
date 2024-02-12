@@ -16,6 +16,7 @@ const Models = () => {
                     elem["Тип кузова"] !== "грузовик" &&
                     elem["Тип кузова"] !== "тягач"
                 );
+
             default:
                 // Этот блок будет выполняться, если не выбрана ни одна из категорий
 
@@ -87,7 +88,7 @@ const Models = () => {
                         contentItemFilter.map((e, i) => (
                             <div
                                 key={i}
-                                className="flex flex-col gap-5 border border-gray-200 p-2 md:p-5 max-sm:bg-gray-50 justify-between"
+                                className="flex flex-col gap-2 md:gap-5 border border-gray-200 p-2 md:p-5 max-sm:bg-gray-50 justify-between"
                             >
                                 <div className="relative aspect-[2/1.4]">
                                     <Image

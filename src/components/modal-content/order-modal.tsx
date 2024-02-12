@@ -17,7 +17,7 @@ const OrderModalContent = () => {
                 </div>
                 <div className="w-[40%] hidden md:block relative">
                     <Image
-                        src="/modal/orderModalImg.jpg"
+                        src="/modal/orderModal.jpg"
                         fill
                         alt="orderModalImg"
                         className=" object-cover"

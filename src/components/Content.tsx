@@ -16,12 +16,12 @@ export const Content = ({
     verticalPadding = true,
     ...props
 }: ContentProps): JSX.Element => {
-    const verticalPaddingClass = verticalPadding ? "py-12 sm:py-32" : "";
+    const verticalPaddingClass = verticalPadding ? "py-12 sm:py-28" : "";
 
     return (
         <div
             {...props}
-            className={` mx-auto w-full max-w-[1528px] px-5 sm:px-8 md:px-16 ${verticalPaddingClass} ${className}`}
+            className={` mx-auto w-full max-w-[1528px] px-5 sm:px-8 md:px-16 ${verticalPaddingClass} ${className} py`}
         >
             {children}
         </div>
