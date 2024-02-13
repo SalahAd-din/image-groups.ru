@@ -3,7 +3,7 @@ import { Content } from "@/src/components/Content";
 import Image from "next/image";
 const About = () => {
     return (
-        <section>
+        <section id="about">
             <Content className=" ">
                 <div className="max-lg:max-w-3xl mx-auto">
                     <h2 className="display_medium uppercase text-center mb-7 md:mb-14">
@@ -18,13 +18,13 @@ const About = () => {
                                 <div className="flex flex-col gap-5">
                                     <p className="body_small md:body_medium">
                                         <strong>2018</strong> - Основание Волга
-                                        Трак Центра и начало пути к лидерству на
-                                        рынке грузовой техники
+                                        Трак Центра и начало пути на рынке
+                                        грузовой техники
                                     </p>
                                     <p className="body_small md:body_medium">
                                         <strong>2020 </strong>- Расширение
-                                        ассортимента и внедрение инновационных
-                                        сервисных услуг для клиентов
+                                        ассортимента и внедрение новых сервисных
+                                        услуг для клиентов
                                     </p>
                                     <p className="body_small md:body_medium">
                                         <strong>2022</strong> - Достижение

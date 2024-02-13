@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Content } from "@/src/components/Content";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
+import OrderModal from "@/src/components/modals/order-modal";
+import OrderModalContent from "@/src/components/modal-content/order-modal";
 const Models = () => {
     const [category, setCategory] = useState("all");
     const contentItemFilter = contentItem.filter(elem => {
@@ -88,7 +90,7 @@ const Models = () => {
                         contentItemFilter.map((e, i) => (
                             <div
                                 key={i}
-                                className="flex flex-col gap-2 md:gap-5 border border-gray-200 p-2 md:p-5 max-sm:bg-gray-50 justify-between"
+                                className="flex flex-col gap-2 md:gap-5 border border-gray-200 p-2 md:p-5 max-sm:bg-gray-100 justify-between"
                             >
                                 <div className="relative aspect-[2/1.4]">
                                     <Image
@@ -102,32 +104,55 @@ const Models = () => {
                                     {e.title}
                                 </p>
                                 <div>
-                                    <p className="text-xs md:text-base">
-                                        <b>Тип кузова:</b> {e["Тип кузова"]}
-                                    </p>
-                                    <p className="text-xs md:text-base">
-                                        <b>Модель:</b> {e.Модель}
-                                    </p>
-                                    <p className="text-xs md:text-base">
-                                        <b>Колесная формула:</b>{" "}
-                                        {e["Колесная формула"]}
-                                    </p>
-                                    <p className="text-xs md:text-base">
-                                        <b>Двигатель:</b> {e.Двигатель}
-                                    </p>
-                                    <p className="text-xs md:text-base">
-                                        <b>Год выпуска:</b> {e["Год выпуска"]}
-                                    </p>
-                                    <p className="text-xs md:text-base">
-                                        <b>Тип:</b> {e.Тип}
-                                    </p>
+                                    {e["Тип кузова"] && (
+                                        <p className="text-xs md:text-base">
+                                            <b>Тип кузова:</b> {e["Тип кузова"]}
+                                        </p>
+                                    )}
+                                    {e.Модель && (
+                                        <p className="text-xs md:text-base">
+                                            <b>Модель:</b> {e.Модель}
+                                        </p>
+                                    )}
+                                    {e["Колесная формула"] && (
+                                        <p className="text-xs md:text-base">
+                                            <b>Колесная формула:</b>{" "}
+                                            {e["Колесная формула"]}
+                                        </p>
+                                    )}
+                                    {e.Двигатель && (
+                                        <p className="text-xs md:text-base">
+                                            <b>Двигатель:</b> {e.Двигатель}
+                                        </p>
+                                    )}
+                                    {e["Год выпуска"] && (
+                                        <p className="text-xs md:text-base">
+                                            <b>Год выпуска:</b>{" "}
+                                            {e["Год выпуска"]}
+                                        </p>
+                                    )}
+                                    {e.Тип && (
+                                        <p className="text-xs md:text-base">
+                                            <b>Тип:</b> {e.Тип}
+                                        </p>
+                                    )}
                                 </div>
                                 <p className="text-base md:text-2xl font-bold">
                                     {e.Стоимость}
                                 </p>
-                                <Button className="w-full" variant="outline">
-                                    Подробнее
-                                </Button>
+
+                                <OrderModal
+                                    trigger={
+                                        <Button
+                                            className="w-full"
+                                            variant="outline"
+                                        >
+                                            Подробнее
+                                        </Button>
+                                    }
+                                >
+                                    <OrderModalContent />
+                                </OrderModal>
                             </div>
                         ))
                     )}
@@ -145,6 +170,7 @@ const contentItem = [
         title: "X6000 480 л.с",
         img: "X6000_1.png",
         "Тип кузова": "тягач",
+        Фирма: "shacman",
         Модель: "SX4188YY381",
         "Колесная формула": "4х2",
         Двигатель: "Weichai",
@@ -154,6 +180,7 @@ const contentItem = [
     },
     {
         //it is ok 2
+        Фирма: "shacman",
         title: "X6000 480 л.с",
         img: "X6000_2.png",
         "Тип кузова": "тягач",
@@ -166,6 +193,7 @@ const contentItem = [
     },
     {
         //it is ok 3
+        Фирма: "shacman",
         title: "X5000 550 л.с",
         img: "X5000_550_1.png",
         "Тип кузова": "тягач",
@@ -178,6 +206,7 @@ const contentItem = [
     },
     {
         //it is ok 4
+        Фирма: "shacman",
         title: "X5000 430 л.с",
         img: "X5000_430_1.png",
         "Тип кузова": "тягач",
@@ -190,6 +219,7 @@ const contentItem = [
     },
     {
         //it is ok 5
+        Фирма: "shacman",
         title: "Х5000 430 л.с",
         img: "X5000_430_6.png",
         "Тип кузова": "самосвал",
@@ -202,6 +232,7 @@ const contentItem = [
     },
     {
         //it is ok 6
+        Фирма: "shacman",
         title: "Х5000 430 л.с",
         img: "X5000_430_3.png",
         "Тип кузова": "самосвал",
@@ -215,6 +246,7 @@ const contentItem = [
     },
     {
         //it is ok 7
+        Фирма: "shacman",
         title: "Х5000 430 л.с",
         img: "X5000_430_4.png",
         "Тип кузова": "самосвал",
@@ -228,6 +260,7 @@ const contentItem = [
     },
     {
         //it is ok 8
+        Фирма: "shacman",
         title: "Х5000 440 л.с",
         img: "Х5000_440_1.png",
         "Тип кузова": "тягач",
@@ -240,6 +273,7 @@ const contentItem = [
     },
     {
         //it is ok 9
+        Фирма: "shacman",
         title: "Х3000 440 л.с",
         img: "Х3000_440_1.png",
         "Тип кузова": "тягач",
@@ -252,6 +286,7 @@ const contentItem = [
     },
     {
         //it is not ok / It is has not image 10
+        Фирма: "shacman",
         title: "X5000 430 л.с",
         img: " ",
         Ошиновка: "двускатная",
@@ -265,6 +300,7 @@ const contentItem = [
     },
     {
         //it is ok 11
+        Фирма: "shacman",
         title: "X5000 440 л.с",
         img: "X5000_440_1.png",
         Ошиновка: "двускатная",
@@ -278,6 +314,7 @@ const contentItem = [
     },
     {
         //it is ok 12
+        Фирма: "shacman",
         title: "X5000 430 л.с",
         img: "X5000_430_2.png",
         Ошиновка: "односкатная",
@@ -291,6 +328,7 @@ const contentItem = [
     },
     {
         //it is ok 13
+        Фирма: "shacman",
         title: "X3000 440 л.с",
         img: "X3000_440_1.png",
         "Тип кузова": "самосвал",
@@ -304,6 +342,7 @@ const contentItem = [
     },
     {
         //it is ok 14
+        Фирма: "shacman",
         title: "X5000 430 л.с",
         img: "X5000_430_5.png",
         "Тип кузова": "тягач",
@@ -317,6 +356,7 @@ const contentItem = [
     },
     {
         //it is ok 15
+        Фирма: "shacman",
         title: "X5000 430 л.с",
         img: "X5000_430_7.png",
         "Тип кузова": "тягач",
@@ -330,6 +370,7 @@ const contentItem = [
     },
     {
         //it is ok 16
+        Фирма: "shacman",
         title: "Х5000 550 л.с",
         img: "Х5000_550_1.png",
         "Тип кузова": "самосвал",
@@ -342,6 +383,7 @@ const contentItem = [
     },
     {
         //it is ok 17
+        Фирма: "shacman",
         title: "Х5000 440 л.с",
         img: "Х5000_440_2.png",
         "Тип кузова": "самосвал",
@@ -354,6 +396,7 @@ const contentItem = [
     },
     {
         //it is ok 18
+        Фирма: "shacman",
         title: "X5000 430 л.с",
         img: "X5000_430_8.png",
         "Тип кузова": "самосвал",
@@ -366,6 +409,7 @@ const contentItem = [
     },
     {
         //it is ok 19
+        Фирма: "shacman",
         title: "X5000 375 л.с.",
         img: "X5000_375_1.png",
         "Тип кузова": "автобетоносмеситель",
@@ -378,6 +422,7 @@ const contentItem = [
     },
     {
         //it is ok 20
+        Фирма: "shacman",
         title: "X5000 336 л.с",
         img: "X5000_336_1.png",
         "Тип кузова": "автобетоносмеситель",
@@ -390,6 +435,7 @@ const contentItem = [
     },
     {
         //it is ok 21
+        Фирма: "shacman",
         title: "L3000 270 л.с",
         img: "L3000_270_1.png",
         "Тип кузова": "зерновоз",
@@ -402,6 +448,7 @@ const contentItem = [
     },
     {
         //it is ok 22
+        Фирма: "shacman",
         title: "X3000 430 л.с",
         img: "X3000_430_1.png",
         "Тип кузова": "зерновоз",
@@ -410,6 +457,86 @@ const contentItem = [
         Двигатель: "Weichai",
         "Год выпуска": "2023",
         Тип: "рессорная",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 1
+        Фирма: "BEIBEN",
+        title: "1848S 480 л.с.",
+        img: "1848S_480_1.png",
+        "Тип кузова": "тягач",
+        "Колесная формула": "4х2",
+        Двигатель: "WP13/480, 480 л.с.",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 2
+        Фирма: "BEIBEN",
+        title: "2648S 480 л.с.",
+        img: "2648S_480_1.png",
+        "Тип кузова": "тягач",
+        "Колесная формула": "6х4",
+        Двигатель: "WP13/480, 480 л.с.",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 3
+        Фирма: "BEIBEN",
+        title: "2648S 480 л.с.",
+        img: "2648S_480_2.png",
+        "Тип кузова": "тягач",
+        "Колесная формула": "6х4",
+        Двигатель: "WP13/480, 480 л.с.",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 4
+        Фирма: "BEIBEN",
+        title: "2643SA 430 л.с.",
+        img: "2643SA_430_1.png",
+        "Тип кузова": "тягач",
+        "Колесная формула": "6х6",
+        Двигатель: "WP12/480, 430 л.с.",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 5
+        Фирма: "BEIBEN",
+        title: "2643SA 430 л.с.",
+        img: "2643SA_430_2.png",
+        "Тип кузова": "тягач",
+        "Колесная формула": "6х6",
+        Двигатель: "WP12/480, 430 л.с.",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 6
+        Фирма: "BEIBEN",
+        title: "3343K 430 л.с.",
+        img: "3343K_430_1.png",
+        "Тип кузова": "Самосвал",
+        "Колесная формула": "6х4",
+        Двигатель: "WP12.430Е50, 430 л.с.",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 7
+        Фирма: "BEIBEN",
+        title: "3343АК 430 л.с.",
+        img: "3343АК_430_1.png",
+        "Тип кузова": "Самосвал",
+        "Колесная формула": "6х6",
+        Двигатель: "WP12.430Е50, 430 л.с.",
+        Стоимость: "по запросу",
+    },
+    {
+        //it is ok 8
+        Фирма: "BEIBEN",
+        title: "4143K 430 л.с.",
+        img: "4143K_430_1.png",
+        "Тип кузова": "Самосвал",
+        "Колесная формула": "8х4",
+        Двигатель: "WP12.430Е50, 430 л.с.",
         Стоимость: "по запросу",
     },
 ];

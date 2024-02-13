@@ -10,7 +10,7 @@ export const Online = () => {
     return (
         <div
             id="floatingBlock"
-            className="fixed w-10 h-10 right-[12vw] bottom-[35vw] md:bottom-[12vw] z-20  cursor-pointer"
+            className="fixed w-10 h-10 right-[12vw] bottom-[25vw] md:bottom-[12vw] z-20  cursor-pointer"
         >
             <a
                 id="whatsapp_icon"

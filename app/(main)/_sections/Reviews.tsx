@@ -45,7 +45,7 @@ const reviews = [
 
 const Reviews = () => {
     return (
-        <section className="relative ">
+        <section className="relative " id="reviews">
             <div className="absolute left-0 top-0 w-full h-full">
                 <Image
                     src="/pages/main/review_1.jpg"
@@ -70,7 +70,15 @@ const Reviews = () => {
                                         <div className=" w-full h-full bg-white p-5 flex flex-col justify-between">
                                             <div>
                                                 <div className="flex gap-5 items-center">
-                                                    <div className=" shrink-0 w-10 h-10 rounded-full bg-gray-400"></div>
+                                                    <div className=" shrink-0 w-10 h-10 rounded-full bg-gray-400 relative overflow-hidden">
+                                                        <Image
+                                                            src={`/avatar_${
+                                                                i + 1
+                                                            }.jpg`}
+                                                            fill
+                                                            alt="avatar"
+                                                        />
+                                                    </div>
                                                     <p className="body_small font-semibold">
                                                         {e.FIO}
                                                     </p>

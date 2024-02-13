@@ -1,7 +1,8 @@
 export const navigation = [
-    { link: "#", title: "Главная" },
-    { link: "#", title: "О компании" },
-    { link: "#models", title: "Каталог" },
-    { link: "#", title: "Услуги" },
-    { link: "#", title: "Контакты" },
+    { link: "#about", title: "О компании" },
+    { link: "#services", title: "Услуги" },
+    { link: "#models", title: "Модельный ряд" },
+    { link: "#reviews", title: "Отзывы" },
+    { link: "#faq", title: "FAQ" },
+    { link: "#contacts", title: "Контакты" },
 ];

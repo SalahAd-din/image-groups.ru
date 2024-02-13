@@ -31,7 +31,7 @@ const contentItem = [
 
 const Services = () => {
     return (
-        <section>
+        <section id="services">
             <Content>
                 <div className="max-w-sm sm:max-w-5xl mx-auto">
                     <h2 className="display_medium uppercase text-center mb-7 md:mb-14">

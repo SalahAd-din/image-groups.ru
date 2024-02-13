@@ -28,7 +28,7 @@ const arr = [
 
 const FAQ = () => {
     return (
-        <section>
+        <section id="faq">
             <Content className="">
                 <div className="max-w-4xl mx-auto ">
                     <h2 className="display_medium uppercase text-center mb-7 md:mb-14">

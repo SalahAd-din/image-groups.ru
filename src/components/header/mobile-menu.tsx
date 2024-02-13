@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import { navigation } from "@/src/lib/const/navigation";
 import Link from "next/link";
+import { contacts } from "@/src/lib/const/contacts";
 
 export function MobileMenu() {
     const [open, setOpen] = React.useState(false);
@@ -19,13 +20,13 @@ export function MobileMenu() {
                 />
             </SheetTrigger>
             <SheetContent side="right" className="bg-white p-10 pt-16">
-                <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-16">
                     <div className="flex flex-col gap-4">
                         {navigation.map((e, i) => (
                             <Link
                                 key={i}
                                 href={e.link}
-                                className="body_medium"
+                                className="body_medium uppercase font-bold text-gray-800"
                                 onClick={() => setOpen(false)}
                             >
                                 {e.title}
@@ -33,25 +34,39 @@ export function MobileMenu() {
                         ))}
                     </div>
                     <div className="flex flex-col gap-4">
-                        <div>
+                        <div className="space-y-1">
                             <p className="title_medium text-primary">
                                 Время работы
                             </p>
-                            <p className="body_smallest">
-                                Каждый день:10:00-20:00
-                            </p>
+                            <p className="text-sm">{contacts.schedule}</p>
                         </div>
-                        <div>
+                        <div className="space-y-1">
                             <p className="title_medium text-primary">Телефон</p>
-                            <p className="body_smallest">+7 933 322 6371</p>
+                            <Link
+                                href={`tel:${contacts.phone}`}
+                                className="text-sm"
+                            >
+                                {contacts.phone}
+                            </Link>
                         </div>
-                        <div>
+                        <div className="space-y-1">
                             <p className="title_medium text-primary">
                                 Мессенджер
                             </p>
-                            <p className="body_smallest">
-                                Каждый день:10:00-20:00
-                            </p>
+                            <div className="flex gap-4 text-sm">
+                                <Link
+                                    href={contacts.telegram}
+                                    className="underline"
+                                >
+                                    Telegram
+                                </Link>
+                                <Link
+                                    href={contacts.whatsapp}
+                                    className="underline"
+                                >
+                                    WhatsApp
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

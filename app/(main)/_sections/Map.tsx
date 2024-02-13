@@ -5,10 +5,16 @@ import Link from "next/link";
 
 const Map = () => {
     return (
-        <div>
+        <div id="contacts">
             <Content>
                 <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 items-start max-w-5xl mx-auto">
-                    <div className=" aspect-square bg-gray-400 max-md:order-2"></div>
+                    <div className=" aspect-[2/1.8] bg-gray-400 max-md:order-2">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae0d8a1fd41a4c4d3698b317045d9154df351365f0e68f6b4ea3e3a96ffb4c2ea&amp;source=constructor"
+                            width="100%"
+                            height="100%"
+                        ></iframe>
+                    </div>
                     <div className="max-md:order-1">
                         <h2 className="display_medium uppercase  mb-7 md:mb-14">
                             Контакты
@@ -16,11 +22,10 @@ const Map = () => {
                         <div className="grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-4 md:gap-x-6">
                             <div className="flex flex-col gap-2">
                                 <p className="uppercase font-bold md:text-lg">
-                                    Адрес:
+                                    Юр. адрес:
                                 </p>
                                 <p className=" text-sm text-gray-700">
-                                    Г. Зеленодольск, ул. Карла Маркса, д. 24,
-                                    офис 1
+                                    {contacts.adress}
                                 </p>
                             </div>
                             <div className="flex flex-col gap-2">
@@ -28,17 +33,19 @@ const Map = () => {
                                     График работы:
                                 </p>
                                 <p className=" text-sm text-gray-700">
-                                    Г. Зеленодольск, ул. Карла Маркса, д. 24,
-                                    офис 1
+                                    {contacts.schedule}
                                 </p>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <p className="uppercase font-bold md:text-lg">
                                     Телефон:
                                 </p>
-                                <p className=" text-sm text-gray-700">
+                                <Link
+                                    className=" text-sm text-gray-700"
+                                    href={`tel:${contacts.phone}`}
+                                >
                                     {contacts.phone}
-                                </p>
+                                </Link>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <p className="uppercase font-bold md:text-lg">

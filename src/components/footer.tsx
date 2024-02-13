@@ -6,6 +6,7 @@ import { navigation } from "../lib/const/navigation";
 import { Button } from "./ui/button";
 import OrderModalContent from "./modal-content/order-modal";
 import OrderModal from "./modals/order-modal";
+import { contacts } from "../lib/const/contacts";
 
 const Footer = () => {
     return (
@@ -22,14 +23,14 @@ const Footer = () => {
                                 alt="logo"
                                 className="-translate-y-1 object-contain max-sm:w-[75px] shrink-0"
                             />
-                            <p className="max-sm:text-[11px] max-sm:leading-[16px] text-sm font-medium text-white max-w-sm">
+                            <p className="hidden xl:block max-sm:text-[11px] max-sm:leading-[16px] text-sm font-medium text-white max-w-sm">
                                 Выходим за рамки стандартов – эксклюзивные
                                 предложения на спецтехнику для тяжёлых задач!
                             </p>
                         </div>
                     </div>
                     <div className="hidden lg:flex gap-16  w-full justify-end">
-                        <div>
+                        <div className="space-y-1">
                             <p className="title_medium text-white text-right">
                                 Время работы
                             </p>
@@ -41,17 +42,31 @@ const Footer = () => {
                             <p className="title_medium text-white text-right">
                                 Телефон
                             </p>
-                            <p className="body_smallest text-white">
-                                +7 933 322 6371
-                            </p>
+                            <Link
+                                href={`tel:${contacts.phone}`}
+                                className="text-sm text-white"
+                            >
+                                {contacts.phone}
+                            </Link>
                         </div>
                         <div>
                             <p className="title_medium text-white text-right">
                                 Мессенджер
                             </p>
-                            <p className="body_smallest text-white">
-                                Каждый день:10:00-20:00
-                            </p>
+                            <div className="flex gap-4 text-sm text-white">
+                                <Link
+                                    href={contacts.telegram}
+                                    className="underline"
+                                >
+                                    Telegram
+                                </Link>
+                                <Link
+                                    href={contacts.whatsapp}
+                                    className="underline"
+                                >
+                                    WhatsApp
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
