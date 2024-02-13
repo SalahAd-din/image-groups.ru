@@ -1,8 +1,9 @@
 "use client";
-import { contacts } from "@/src/lib/consts";
+
 import { cn } from "@/src/lib/utils";
 import Image from "next/image";
 import React, { useState } from "react";
+import { contacts } from "../lib/const/contacts";
 
 export const Online = () => {
     const [active, setActive] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Content } from "@/src/components/Content";
-import { contacts } from "@/src/const/contacts";
+import { contacts } from "@/src/lib/const/contacts";
 import Link from "next/link";
 
 const Map = () => {

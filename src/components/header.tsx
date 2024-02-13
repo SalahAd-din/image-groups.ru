@@ -2,7 +2,7 @@ import React from "react";
 import { Content } from "./Content";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { navigation } from "../const/navigation";
+import { navigation } from "../lib/const/navigation";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Menu } from "lucide-react";

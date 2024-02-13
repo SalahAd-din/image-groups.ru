@@ -4,7 +4,7 @@ import * as React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/src/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Image from "next/image";
-import { navigation } from "@/src/const/navigation";
+import { navigation } from "@/src/lib/const/navigation";
 import Link from "next/link";
 
 export function MobileMenu() {

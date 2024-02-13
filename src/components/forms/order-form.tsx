@@ -26,13 +26,15 @@ const formSchema = z.object({
         }
     ),
 });
-
+import { useOrderFormStage } from "@/src/lib/stores/order-form-stage";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
+import { sendMail } from "@/src/lib/actions/send-mail";
 /* import { orderFormHandlerAction } from "@/lib/actions";
 import { useOrderFormStage } from "@/lib/stores"; */
 
 export function OrderForm() {
+    const { stage, setStage } = useOrderFormStage();
     const [isLoading, setIsLoading] = useState(false);
     const [isOk, setIsOk] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -46,6 +48,18 @@ export function OrderForm() {
 
     // 2. Define a submit handler.
     async function onSubmit(values: z.infer<typeof formSchema>): Promise<void> {
+        try {
+            setStage("loading");
+            const result = await sendMail({
+                phone: values.phone,
+                url: window.location.href,
+            });
+            setStage("success");
+        } catch (error) {
+            setStage("error");
+            console.log(error);
+        }
+
         /* setStage("loading");
 
         try {

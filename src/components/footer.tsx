@@ -2,7 +2,7 @@ import React from "react";
 import { Content } from "./Content";
 import Image from "next/image";
 import Link from "next/link";
-import { navigation } from "../const/navigation";
+import { navigation } from "../lib/const/navigation";
 import { Button } from "./ui/button";
 import OrderModalContent from "./modal-content/order-modal";
 import OrderModal from "./modals/order-modal";
