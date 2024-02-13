@@ -8,6 +8,6 @@ interface OrderFormStageProps {
 }
 
 export const useOrderFormStage = create<OrderFormStageProps>(set => ({
-    stage: "success",
+    stage: "form",
     setStage: stage => set({ stage: stage }),
 }));
