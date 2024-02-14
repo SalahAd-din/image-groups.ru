@@ -56,9 +56,9 @@ const Models = () => {
                     </p>
                     <div className="flex space-x-4 text-lg">
                         <p
-                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
+                            className={`flex items-center cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
                                 brand == "all" &&
-                                "border border-primary/20 bg-primary/10"
+                                " !border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setbrand("all")}
                         >
@@ -68,7 +68,7 @@ const Models = () => {
                         <div
                             className={`flex gap-1 items-center uppercase cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
                                 brand == "shacman" &&
-                                "border border-primary/20 bg-primary/10"
+                                "  !border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setbrand("shacman")}
                         >
@@ -80,7 +80,7 @@ const Models = () => {
                         <div
                             className={`flex gap-1 items-center uppercase cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
                                 brand == "BEIBEN" &&
-                                "border border-primary/20 bg-primary/10"
+                                " !border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setbrand("BEIBEN")}
                         >
@@ -97,36 +97,36 @@ const Models = () => {
                     </p>
                     <div className="flex gap-2.5 md:gap-4 text-lg">
                         <p
-                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
+                            className={`cursor-pointer max-sm:text-sm p-1.5 px-2.5 bg-gray-100 rounded-sm border border-white ${
                                 category == "all" &&
-                                "border border-primary/20 bg-primary/10"
+                                "!border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("all")}
                         >
                             Все
                         </p>
                         {/* <p
-                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
+                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
                                 category == "Грузовики" &&
-                                "border border-primary/20 bg-primary/10"
+                                "!border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("Грузовики")}
                         >
                             Грузовики
                         </p> */}
                         <p
-                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
+                            className={`cursor-pointer max-sm:text-sm p-1.5 px-2.5 bg-gray-100 rounded-sm border border-white ${
                                 category == "Спецтехника" &&
-                                "border border-primary/20 bg-primary/10"
+                                "!border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("Спецтехника")}
                         >
                             Спецтехника
                         </p>
                         <p
-                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
+                            className={`cursor-pointer max-sm:text-sm p-1.5 px-2.5 bg-gray-100 rounded-sm border border-white ${
                                 category == "Тягачи" &&
-                                "border border-primary/20 bg-primary/10"
+                                "!border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("Тягачи")}
                         >

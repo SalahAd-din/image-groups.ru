@@ -10,6 +10,7 @@ import {
 } from "@tabler/icons-react";
 import { contacts } from "@/src/lib/const/contacts";
 import Link from "next/link";
+import { Icons } from "../ui/icon";
 
 const OrderModalContent = () => {
     const { stage, setStage } = useOrderFormStage();
@@ -24,7 +25,27 @@ const OrderModalContent = () => {
                         Оставьте заявку, специалист компании свяжется с Вами и
                         проконсультирует по всем вопросам
                     </p>
+
                     <div className=" max-w-xs ">
+                        <div className="flex gap-2.5 relative overflow-hidden mb-5">
+                            <Link
+                                href={contacts.whatsapp}
+                                className=" p-2 rounded-full bg-[#43d854]"
+                                target="_blank"
+                            >
+                                <Icons.whatsapp
+                                    className="w-7 h-7 "
+                                    color="white"
+                                />
+                            </Link>
+                            <Link
+                                href={contacts.telegram}
+                                className=" p-2 rounded-full bg-[#0088cc]"
+                                target="_blank"
+                            >
+                                <Icons.telegram className="w-7 h-7" />
+                            </Link>
+                        </div>
                         <OrderForm />
                     </div>
                 </div>
