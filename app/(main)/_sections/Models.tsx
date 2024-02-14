@@ -5,9 +5,18 @@ import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
 import OrderModal from "@/src/components/modals/order-modal";
 import OrderModalContent from "@/src/components/modal-content/order-modal";
+import { Icon123 } from "@tabler/icons-react";
+import { Icons } from "@/src/components/ui/icon";
+
+// function calculate
+const calculate = () => {
+    return 0;
+};
 const Models = () => {
+    const [brand, setbrand] = useState("all");
     const [category, setCategory] = useState("all");
-    const contentItemFilter = contentItem.filter(elem => {
+
+    let contentItemFilter = contentItem.filter(elem => {
         switch (category) {
             case "Грузовики":
                 return elem["Тип кузова"] === "грузовик";
@@ -18,54 +27,106 @@ const Models = () => {
                     elem["Тип кузова"] !== "грузовик" &&
                     elem["Тип кузова"] !== "тягач"
                 );
-
             default:
                 // Этот блок будет выполняться, если не выбрана ни одна из категорий
-
                 return true;
         }
     });
-
+    contentItemFilter = contentItemFilter.filter(elem => {
+        switch (brand) {
+            case "BEIBEN":
+                return elem["Фирма"] === "BEIBEN";
+            case "shacman":
+                return elem["Фирма"] === "shacman";
+            default:
+                // Этот блок будет выполняться, если не выбрана ни одна из категорий
+                return true;
+        }
+    });
+    console.log(brand);
     return (
         <section className="" id="models">
             <Content>
                 <h2 className="display_medium uppercase text-center mb-7 md:mb-14">
                     модельный ряд
                 </h2>
+                <div className="flex flex-col gap-2.5 md:gap-5 my-10">
+                    <p className="text-base md:text-2xl font-semibold">
+                        Выберите марку грузовиков:
+                    </p>
+                    <div className="flex space-x-4 text-lg">
+                        <p
+                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
+                                brand == "all" &&
+                                "border border-primary/20 bg-primary/10"
+                            }`}
+                            onClick={() => setbrand("all")}
+                        >
+                            Все
+                        </p>
 
+                        <div
+                            className={`flex gap-1 items-center uppercase cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
+                                brand == "shacman" &&
+                                "border border-primary/20 bg-primary/10"
+                            }`}
+                            onClick={() => setbrand("shacman")}
+                        >
+                            <div className="w-6 h-6 flex justify-center items-center">
+                                <Icons.shacman />
+                            </div>
+                            <p>Shacman</p>
+                        </div>
+                        <div
+                            className={`flex gap-1 items-center uppercase cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white ${
+                                brand == "BEIBEN" &&
+                                "border border-primary/20 bg-primary/10"
+                            }`}
+                            onClick={() => setbrand("BEIBEN")}
+                        >
+                            <div className="w-6 h-6 flex justify-center items-center">
+                                <Icons.beiben />
+                            </div>
+                            <p>Beiben</p>
+                        </div>
+                    </div>
+                </div>
                 <div className="flex flex-col gap-2.5 md:gap-5 my-10">
                     <p className="text-base md:text-2xl font-semibold">
                         Выберите категорию грузовиков:
                     </p>
-                    <div className="flex gap-5 md:gap-10 text-lg">
+                    <div className="flex gap-2.5 md:gap-4 text-lg">
                         <p
-                            className={`cursor-pointer max-sm:text-sm ${
-                                category == "all" && "font-bold underline"
+                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
+                                category == "all" &&
+                                "border border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("all")}
                         >
                             Все
                         </p>
-                        <p
-                            className={`cursor-pointer max-sm:text-sm ${
-                                category == "Грузовики" && "font-bold underline"
+                        {/* <p
+                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
+                                category == "Грузовики" &&
+                                "border border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("Грузовики")}
                         >
                             Грузовики
-                        </p>
+                        </p> */}
                         <p
-                            className={`cursor-pointer max-sm:text-sm ${
+                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
                                 category == "Спецтехника" &&
-                                "font-bold underline"
+                                "border border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("Спецтехника")}
                         >
                             Спецтехника
                         </p>
                         <p
-                            className={`cursor-pointer max-sm:text-sm ${
-                                category == "Тягачи" && "font-bold underline"
+                            className={`cursor-pointer max-sm:text-sm p-1 px-2.5 bg-gray-100 rounded-sm border border-white${
+                                category == "Тягачи" &&
+                                "border border-primary/20 bg-primary/10"
                             }`}
                             onClick={() => setCategory("Тягачи")}
                         >
@@ -284,7 +345,7 @@ const contentItem = [
         Тип: "рессорная",
         Стоимость: "7 990 000 руб",
     },
-    {
+    /* {
         //it is not ok / It is has not image 10
         Фирма: "shacman",
         title: "X5000 430 л.с",
@@ -297,7 +358,7 @@ const contentItem = [
         "Год выпуска": "2023",
         Тип: "пневмо",
         Стоимость: "8 990 000 руб.",
-    },
+    }, */
     {
         //it is ok 11
         Фирма: "shacman",
