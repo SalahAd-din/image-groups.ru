@@ -16,13 +16,17 @@ const Footer = () => {
                 <div className="flex justify-between">
                     <div className=" md:shrink-0">
                         <div className="flex max-md:flex-col gap-5 md:items-center ">
-                            <Image
+                            {/*  <Image
                                 src="/logo/logo-white.svg"
                                 width={55}
                                 height={33}
                                 alt="logo"
                                 className="-translate-y-1 object-contain max-sm:w-[75px] shrink-0"
-                            />
+                            /> */}
+                            <div className="text-xl text-white uppercase font-extrabold leading-6">
+                                <p>Образ</p>
+                                <p>Групп</p>
+                            </div>
                             <p className="hidden xl:block max-sm:text-[11px] max-sm:leading-[16px] text-sm font-medium text-white max-w-sm">
                                 Выходим за рамки стандартов – эксклюзивные
                                 предложения на спецтехнику для тяжёлых задач!

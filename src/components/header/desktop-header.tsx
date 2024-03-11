@@ -17,13 +17,17 @@ const DesktopHeader = () => {
                         <div className="flex justify-around ">
                             <div className="flex justify-center gap-3 sm:gap-5  flex-shrink w-full  left-0">
                                 <div className="flex gap-5 items-center content-center">
-                                    <Image
+                                    {/* <Image
                                         src="/logo/logo3.svg"
                                         width={55}
                                         height={33}
                                         alt="logo"
                                         className="-translate-y-1 object-contain max-sm:w-[75px] shrink-0"
-                                    />
+                                    /> */}
+                                    <div className="text-2xl text-orange-950 uppercase font-extrabold leading-6">
+                                        <p>Образ</p>
+                                        <p>Групп</p>
+                                    </div>
                                     <p className="hidden xl:block max-sm:text-[11px] max-sm:leading-[16px] text-sm font-semibold text-amber-900">
                                         Выходим за рамки стандартов –
                                         эксклюзивные{" "}

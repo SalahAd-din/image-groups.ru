@@ -12,13 +12,17 @@ const MobileHeader = () => {
             >
                 <div className="flex justify-between items-center">
                     <div className="font-bold text-xs flex gap-3 items-center">
-                        <Image
+                        {/* <Image
                             src="/logo/logo3.svg"
                             width={50}
                             height={30}
                             alt="logo"
                             className="flex-shrink-0"
-                        />
+                        /> */}
+                        <div className="text-xl text-orange-950 uppercase font-extrabold leading-6">
+                            <p>Образ</p>
+                            <p>Групп</p>
+                        </div>
                         <p className="text-[9px] leading-3 text-amber-900">
                             Выходим за рамки стандартов – эксклюзивные
                             предложения на спецтехнику для тяжёлых задач!
