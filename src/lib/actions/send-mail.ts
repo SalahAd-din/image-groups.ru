@@ -8,8 +8,6 @@ interface sendMailProps {
 }
 
 export async function sendMail({ url, phone }: sendMailProps) {
-    console.log(url, phone);
-    console.log("ok");
     try {
         const transporter = nodemailer.createTransport({
             host: "smtp.yandex.ru",

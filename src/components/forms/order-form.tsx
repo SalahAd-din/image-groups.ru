@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 
 const formSchema = z.object({
     phone: z.string().refine(
-        value => {
+        (value) => {
             // Регулярное выражение для проверки формата номера телефона
             const phoneRegex = /^\+\d{1,2}\s\(\d{3}\)\s\d{3}\s\d{2}-\d{2}$/;
             return phoneRegex.test(value);
@@ -30,6 +30,7 @@ import { useOrderFormStage } from "@/src/lib/stores/order-form-stage";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
 import { sendMail } from "@/src/lib/actions/send-mail";
+import { sendAmo } from "@/src/lib/actions/send-amo";
 /* import { orderFormHandlerAction } from "@/lib/actions";
 import { useOrderFormStage } from "@/lib/stores"; */
 
@@ -55,6 +56,10 @@ export function OrderForm() {
                 url: window.location.href,
             });
             setStage("success");
+            await sendAmo({
+                phone: values.phone,
+                url: window.location.href,
+            });
         } catch (error) {
             setStage("error");
             console.log(error);
