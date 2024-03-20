@@ -22,7 +22,7 @@ const Map = () => {
                         <div className="grid grid-cols-2 grid-rows-2 gap-y-10 gap-x-4 md:gap-x-6">
                             <div className="flex flex-col gap-2">
                                 <p className="uppercase font-bold md:text-lg">
-                                    Юр. адрес:
+                                    Адрес:
                                 </p>
                                 <p className=" text-sm text-gray-700">
                                     {contacts.adress}

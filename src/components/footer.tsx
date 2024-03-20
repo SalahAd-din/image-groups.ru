@@ -13,9 +13,9 @@ const Footer = () => {
         <footer className="bg-[#161616]">
             <Content>
                 {" "}
-                <div className="flex justify-between">
+                <div className="flex justify-between max-xl:flex-col gap-5">
                     <div className=" md:shrink-0">
-                        <div className="flex max-md:flex-col gap-5 md:items-center ">
+                        <div className="flex gap-5 md:items-center ">
                             {/*  <Image
                                 src="/logo/logo-white.svg"
                                 width={55}
@@ -27,15 +27,15 @@ const Footer = () => {
                                 <p>Образ</p>
                                 <p>Групп</p>
                             </div>
-                            <p className="hidden xl:block max-sm:text-[11px] max-sm:leading-[16px] text-sm font-medium text-white max-w-sm">
+                            <p className=" xl:block max-sm:text-[11px] max-sm:leading-[16px] text-sm font-medium text-white max-w-sm">
                                 Выходим за рамки стандартов – эксклюзивные
                                 предложения на спецтехнику для тяжёлых задач!
                             </p>
                         </div>
                     </div>
-                    <div className="hidden lg:flex gap-16  w-full justify-end">
+                    <div className="max-sm:flex-col flex gap-2.5 sm:gap-16  w-full xl:justify-end">
                         <div className="space-y-1">
-                            <p className="title_medium text-white text-right">
+                            <p className="title_medium text-white xl:text-right">
                                 Время работы
                             </p>
                             <p className="body_smallest text-white">
@@ -43,7 +43,7 @@ const Footer = () => {
                             </p>
                         </div>
                         <div>
-                            <p className="title_medium text-white text-right">
+                            <p className="title_medium text-white xl:text-right">
                                 Телефон
                             </p>
                             <Link
@@ -54,7 +54,7 @@ const Footer = () => {
                             </Link>
                         </div>
                         <div>
-                            <p className="title_medium text-white text-right">
+                            <p className="title_medium text-white xl:text-right">
                                 Мессенджер
                             </p>
                             <div className="flex gap-4 text-sm text-white">
@@ -74,8 +74,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-10 flex justify-between">
-                    <div className="hidden md:block space-x-10 mt-10">
+                <div className="mt-10 flex justify-between items-start">
+                    {/* <div className="hidden md:block space-x-10 mt-10">
                         {navigation.map((e, i) => (
                             <Link
                                 key={i}
@@ -85,6 +85,36 @@ const Footer = () => {
                                 {e.title}
                             </Link>
                         ))}
+                    </div> */}
+                    <div className="text-sm flex flex-col gap-2.5 sm:gap-5 text-white max-w-xl">
+                        <p>
+                            <span className="text-white/60">
+                                Юридический адрес (Фактический адрес):
+                            </span>{" "}
+                            422550, Республика Татарстан, Зеденододьский район,
+                            город Зеленодольск, улица Карла Маркса, дом 24, офис
+                            1
+                        </p>
+                        {/* <p>
+                            Фактический адрес: 422550, Республика Татарстан,
+                            Зеденододьский район, город Зеленодольск, улица
+                            Карла Маркса, дом 24, офис 1
+                        </p> */}
+                        {/* <a className=" underline" href="tel:+7 (927) 245-91-70">
+                            Рабочий телефон: +7 (927) 245-91-70
+                        </a> */}
+                        <div className="flex gap-2.5 sm:gap-5 max-sm:flex-col">
+                            <p>
+                                <span className="text-white/60">
+                                    ИНН / КПП:{" "}
+                                </span>{" "}
+                                1648045363 / 164801001
+                            </p>
+                            <p>
+                                <span className="text-white/60">ОГРН: </span>{" "}
+                                1171690021293
+                            </p>
+                        </div>
                     </div>
                     <OrderModal
                         trigger={
